@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helping Hands — NGO (Test Site)</title>
+  <!-- Google Font: easy readable modern font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Simple, modern, responsive CSS. Change variables below to customize colors. */
+    :root{
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #1e90ff; /* blue accent. replace to change look */
+      --accent-2: #6ee7b7;
+      --maxw: 1000px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial; background:var(--bg); color:var(--text); line-height:1.5}
+    .container{max-width:var(--maxw); margin:0 auto; padding:20px}
+
+    /* Header */
+    header.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav.nav{display:flex;gap:18px;align-items:center}
+    nav.nav a{color:inherit;text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:white;padding:8px 14px;border-radius:10px;text-decoration:none}
+
+    /* Hero */
+    .hero{display:flex;gap:28px;align-items:center;padding:36px 0}
+    .hero-left{flex:1}
+    .hero h1{font-size:28px;margin:0 0 8px}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 24px rgba(2,6,23,0.06)}
+
+    /* Sections */
+    .section{padding:36px 0}
+    .section-title{font-size:20px;margin-bottom:10px}
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .program{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 18px rgba(2,6,23,0.04)}
+
+    .volunteer{display:flex;gap:12px;align-items:center}
+    .donate-btn{background:#ff8a65;color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Contact */
+    .contact-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 16px rgba(2,6,23,0.04)}
+    input,textarea{width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid #e6edf3}
+
+    /* Footer */
+    footer.footer{padding:18px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+
+    /* Mobile */
+    @media (max-width:900px){
+      .cards{grid-template-columns:1fr}
+      .programs{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      nav.nav{display:none}
+      .mobile-nav{display:block}
+    }
+    .mobile-nav{display:none}
+    .menu-btn{background:transparent;border:0;font-size:20px}
+
+  </style>
+</head>
+<body>
+  <!--
+    How to use this file:
+    1) Save as index.html and open in your browser to preview.
+    2) Edit text inside <h1>, <p>, and the sections below to change content.
+    3) Replace the Donate link and the contact form "action" with your payment gateway or form provider.
+    4) Add images in an assets/ folder and reference them with <img src="assets/..." alt="...">.
+  -->
+
+  <header class="container header" role="banner">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">HH</div>
+      <div>
+        <strong>Helping Hands</strong>
+        <div style="color:var(--muted);font-size:13px">Community uplift • Education • Health • Livelihood</div>
+      </div>
+    </div>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="#donate">Donate</a>
+    </nav>
+
+    <div class="mobile-nav">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+  </header>
+
+  <div class="container hero" role="region" aria-label="Hero">
+    <div class="hero-left">
+      <h1>Helping Hands — Empowering communities, one step at a time</h1>
+      <p>We run education, health camps and livelihood programs to help marginalized communities build better lives. Replace this paragraph with your NGO's mission statement.</p>
+      <a class="donate-btn" href="#donate">Donate</a>
+
+      <div class="cards" aria-hidden="false">
+        <div class="card"><strong>1500+</strong><div style="color:var(--muted);font-size:13px">Lives impacted</div></div>
+        <div class="card"><strong>25</strong><div style="color:var(--muted);font-size:13px">Active programs</div></div>
+        <div class="card"><strong>200</strong><div style="color:var(--muted);font-size:13px">Volunteers</div></div>
+      </div>
+    </div>
+    <!-- you can add an image to the right side by adding an <img> here and styling it -->
+  </div>
+
+  <main class="container">
+    <section id="about" class="section" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle" class="section-title">About Us</h2>
+      <p>Helping Hands is a community NGO founded to support education, health and livelihood. Replace this text with your NGO's mission, history and impact. Mention registration details if needed (e.g. registration number, year founded).</p>
+    </section>
+
+    <section id="programs" class="section" aria-labelledby="progTitle">
+      <h2 id="progTitle" class="section-title">Our Programs</h2>
+      <div class="programs">
+        <div class="program"><h3>Education</h3><p>After-school tuition, scholarships and school supplies drives.</p></div>
+        <div class="program"><h3>Health Camps</h3><p>Regular health camps, vaccination drives and awareness sessions.</p></div>
+        <div class="program"><h3>Livelihood</h3><p>Skill training, microloans and placement support.</p></div>
+      </div>
+    </section>
+
+    <section id="volunteer" class="section" aria-labelledby="volTitle">
+      <h2 id="volTitle" class="section-title">Volunteer</h2>
+      <p>We welcome volunteers for teaching, medical camps and admin support. Use the contact form to sign up.</p>
+      <div class="volunteer">
+        <a class="cta" href="#contact">Sign Up to Volunteer</a>
+        <p style="color:var(--muted);margin-left:auto">No experience required — training provided.</p>
+      </div>
+    </section>
+
+    <section id="donate" class="section" aria-labelledby="donTitle">
+      <h2 id="donTitle" class="section-title">Donate</h2>
+      <p>Your donations help us run our programs. Replace the Donate button link with your payment gateway (Razorpay, Paytm, Stripe, etc.) or an external donation page.</p>
+      <a class="donate-btn" href="https://example.com" target="_blank" rel="noopener noreferrer">Donate Now</a>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contactTitle">
+      <h2 id="contactTitle" class="section-title">Contact</h2>
+
+      <div class="contact-form" role="form" aria-label="Contact form">
+        <!-- IMPORTANT: To receive messages, replace the action below with your email using FormSubmit, Formspree, Getform or a server endpoint.
+             Example: action="https://formsubmit.co/youremail@example.com"  -->
+        <form id="contactForm" action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="name">Name</label>
+          <input id="name" name="name" required placeholder="Your full name">
+
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="you@example.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+
+          <button type="submit" class="cta">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer" role="contentinfo">
+    <div>© <span id="year"></span> Helping Hands — All rights reserved</div>
+    <div style="display:flex;gap:10px"><a href="#about">Privacy</a><a href="#contact">Contact</a></div>
+  </footer>
+
+  <!-- Mobile menu (simple) -->
+  <nav id="mobileMenu" style="display:none;position:absolute;top:72px;right:20px;background:var(--card);padding:12px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.08)">
+    <a href="#about">About</a><br>
+    <a href="#programs">Programs</a><br>
+    <a href="#volunteer">Volunteer</a><br>
+    <a href="#contact">Contact</a><br>
+    <a href="#donate" class="donate-btn" style="display:inline-block;margin-top:8px">Donate</a>
+  </nav>
+
+  <script>
+    // small JS for interactivity; replace or remove as you learn
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn && menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.style.display = expanded ? 'none' : 'block';
+    });
+
+    // simple form feedback — this will still POST to the action URL
+    const form = document.getElementById('contactForm');
+    form && form.addEventListener('submit', (e) => {
+      alert('Thanks — your message will be sent. (Replace form action with your email or server for production.)');
+    });
+  </script>
+</body>
+</html>
